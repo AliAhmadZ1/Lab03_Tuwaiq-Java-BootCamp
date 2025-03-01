@@ -31,17 +31,28 @@ public class Music extends Media{
         System.out.println("listening...");
     }
     public List<Music> generalPlayList(List<Music> musicCatalog){
-        return musicCatalog;
+        if (musicCatalog.contains(this.getAuteur())) {
+            musicCatalog.add(this);
+            return musicCatalog;
+        }else {
+            System.out.println("not same auteur.");
+            return musicCatalog;
+        }
     }
 
 
     @Override
     public String getMediaType() {
-        return super.getMediaType();
+        if (this.getPrice()>=10)
+        return "Premium Music";
+        else
+            return "Music";
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Music{" +
+                "artist='" + artist + '\'' +
+                '}';
     }
 }

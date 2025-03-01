@@ -61,8 +61,11 @@ public class Book extends Media{
     public void purchase(User user){
         if (stock==0)
             System.out.println("Unfortunately is out of stock! /-_-\\");
-        else
+        else {
+            stock--;
+            user.setPurchaseMediaList(new Book[1]);
             System.out.println("Enjoy reading. *_*");
+        }
     }
     public boolean isBestSeller(){
      return getAverageRating()>=4.5;
@@ -70,12 +73,16 @@ public class Book extends Media{
 
     public void restock(int quantity){
         this.stock += quantity;
+        System.out.println("Book is successfully restocked!");
     }
 
 
     @Override
     public String getMediaType() {
-        return super.getMediaType();
+        if (isBestSeller())
+        return "Bestselling Book";
+        else
+            return "Book";
     }
 
     @Override

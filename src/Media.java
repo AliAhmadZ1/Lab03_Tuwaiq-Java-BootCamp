@@ -53,7 +53,7 @@ public class Media {
 
     //methods
     public String getMediaType(){
-        return "Music or book or movie";// /*-++*/*-+-*/*-+-*/*-+-*/*-+
+        return "Media:"; // /*-++*/*-+-*/*-+-*/*-+-*/*-+
     }
 
 

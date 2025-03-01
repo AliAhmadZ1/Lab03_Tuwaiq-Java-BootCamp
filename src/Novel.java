@@ -1,9 +1,10 @@
-public class Novel extends Book{
+public class Novel extends Book {
     private String genre;
 
     //constructors
     public Novel() {
     }
+
     public Novel(String genre) {
         this.genre = genre;
     }
@@ -18,7 +19,7 @@ public class Novel extends Book{
         this.genre = genre;
     }
 
-   //setter
+    //setter
     public void setGenre(String genre) {
         this.genre = genre;
     }
@@ -33,7 +34,10 @@ public class Novel extends Book{
 
     @Override
     public String getMediaType() {
-        return super.getMediaType();
+        if (super.getAverageRating() >= 4.5)
+            return "Bestselling Novel";
+        else
+            return "Novel";
     }
 
     @Override

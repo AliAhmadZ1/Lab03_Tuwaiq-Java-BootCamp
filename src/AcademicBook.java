@@ -32,7 +32,10 @@ public class AcademicBook extends Book {
 
     @Override
     public String getMediaType() {
-        return super.getMediaType();
+        if (super.getAverageRating() >= 4.5)
+            return "Bestselling AcademicBook";
+        else
+            return "AcademicBook";
     }
 
     @Override

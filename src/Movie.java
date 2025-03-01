@@ -26,23 +26,32 @@ public class Movie extends Media{
 
     //methods
     public void watch(User user){
-        System.out.println("enjoy watching...");
+        user.setPurchaseMediaList(new Media[0]);
     }
     public ArrayList<Movie> recommendSimilarMovies(ArrayList<Movie> movieCatalog){
-        if (getTitle().length()==5)
+        if (movieCatalog.contains(this.getAuteur())) {
+            movieCatalog.add(this);
             return movieCatalog;
-        else
-            return null;
+        }
+        else {
+            System.out.println("this not from same auteur!!");
+            return movieCatalog;
+        }
     }
 
 
     @Override
     public String getMediaType() {
-        return super.getMediaType();
+        if (this.getDuration()>=120)
+        return "Long Movie";
+        else
+            return "Movie";
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Movie{" +
+                "duration=" + duration +
+                '}';
     }
 }

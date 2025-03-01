@@ -92,6 +92,7 @@ public class Main {
 
         System.out.println("Novel ---------------------->");
         Novel n1 = new Novel();
+        System.out.println(n1.getMediaType());
         n1.setAuteur("fert");
         n1.setIsbn("1548795");
         n1.setGenre("magic");
